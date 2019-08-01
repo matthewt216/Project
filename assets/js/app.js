@@ -56,8 +56,11 @@ $("#accept").on("click", function () {
 
 $("#decline").on("click", function () {
 
-
-
+    console.log(yourCategory);
+    cat.splice(cat.indexOf(yourCategory), 1);
+    console.log(cat);
+    yourCategory = getRandomItem(cat);
+    console.log(yourCategory);
 });
 
 
@@ -66,12 +69,12 @@ $("#awesome").on("click", function () {
 
     console.log("Awesome, enjoy your meal!");
 
-    var showResults;
+    var showRestaurant;
 
 });
 
 $("#another").on("click", function () {
 
-    
+
 
 });
