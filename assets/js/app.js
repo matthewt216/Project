@@ -1,111 +1,77 @@
-var baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term='
+var baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?'
 
-//var term = //$(#term-input).text().val()
-//var category = $(".checkbox:checked").val()
+
+var category = $(".checkbox:checked").val()
 var cat = ['japanese', 'korean', 'thai']
 var radius = '16093'
 var longitude = -118.243683
 var latitude = 34.052235
 var token = 'FfXel153kC1OSu3tNMLQbqKmooHhpPrKhHudPPbmk4ZG3WQao-nKITd4kmR9lcW9MtAtuUOJgtoOWf-oO0KiLbHkquE-9Aj0TQJHHDW-B4HYFqTG42lgwjraNKw8XXYx'
 
-$.ajax({
-    beforeSend: function (request) {
-        request.setRequestHeader("Authorization", 'Bearer ' + token);
-    },
-    type: 'GET',
-    url: baseUrl + cat + '&radius=' + radius + '&latitude=' + latitude + '&longitude=' + longitude + '&categories=' + cat + '&price=1',
-    dataType: 'json',
 
-}).then(function (response) {
-    console.log(response)
 
-});
+//Random function
 
-//Onclick function for Start button on the first page
+function getRandomItem(cat) {
 
-$("#start").on("click", function () {
+    return cat[Math.floor(Math.random() * cat.length)]; 
+    
+}
 
-    $("#start").remove();
-    $("#greeting").remove();
-
-    //Append loaction input, categories, and budget
-
-});
+var yourCategory = getRandomItem(cat);
 
 //Onclick function for Continue button on second page that takes you to randomizing category
  
 $("#continue").on("click", function () {
 
-    //Remove location input, categories, and budget
+    var yourCategory = getRandomItem(cat);
 
-    //Remove loading gif from app - defeats the purpose of saving time
-
-     chosenCategory(cat);
+    console.log("Your category for today is: " + yourCategory);
 
 });
-
-//Choose random category
-
-function chosenCategory(cat) {
-
-    return cat[Math.floor(Math.random() * cat.length)]; 
-}
-
-console.log(chosenCategory(cat));
-
-var yourCategory = chosenCategory(cat);
-
-$("#yourCategory").text("Your category for today is: " + yourCategory);
 
 //Onclick function for Accept and Decline buttons on the "Your Category Is" page
 
 $("#accept").on("click", function () {
 
+    $.ajax({
+        beforeSend: function (request) {
+            request.setRequestHeader("Authorization", 'Bearer ' + token);
+        },
+        type: 'GET',
+        url: baseUrl + "&categories=" + yourCategory + '&radius=' + radius + '&latitude=' + latitude + '&longitude=' + longitude + '&categories=' + cat + '&price=1',
+        dataType: 'json',
+    
+    }).then(function (response) {
+
+        var businesses = response.businesses;
+
+        var myRandom = getRandomItem(businesses);
+
+        console.log(myRandom)
+     
+    }); 
+
 });
 
 $("#decline").on("click", function () {
 
+
+
 });
 
 
-//Choose random restaurant
+//Onclick function for Awesome and Another Restaurant buttons on "Your Restaurant Is" Page
+$("#awesome").on("click", function () {
 
-// //var term = //$(#term-input).text().val()
-// //var category = $(".checkbox:checked").val()
-// var cat = 'japanese'
-// var radius = '16093'
-// var longitude = -118.243683
-// var latitude = 34.052235
-// var token = 'FfXel153kC1OSu3tNMLQbqKmooHhpPrKhHudPPbmk4ZG3WQao-nKITd4kmR9lcW9MtAtuUOJgtoOWf-oO0KiLbHkquE-9Aj0TQJHHDW-B4HYFqTG42lgwjraNKw8XXYx'
+    console.log("Awesome, enjoy your meal!");
 
-// $.ajax({
-//     beforeSend: function (request) {
-//         request.setRequestHeader("Authorization", 'Bearer ' + token);
-//     },
-//     type: 'GET',
-//     url: baseUrl + cat + '&radius=' + radius + '&latitude=' + latitude + '&longitude=' + longitude + '&categories=' + cat + '&price=1',
-//     dataType: 'json',
+    var showResults;
 
-// }).then(function (response) {
-//     console.log(response)
+});
 
-//     var results = response.businesses;
-//     var randomCategory = "";
+$("#another").on("click", function () {
 
-//     for (var i = 0; i < results.length; i++) {
+    
 
-//         randomCategory = results[i].categories[Math.floor(Math.random() * results[i].categories.length)];
-//         console.log(randomCategory);
-
-//     }
-// });
-
-
-// //Onclick function for Awesome and Another Restaurant buttons on "Your Restaurant Is" Page
-// $("#awesome").on("click", function () {
-
-// });
-
-// $("#another").on("click", function () {
-
-// });
+});
