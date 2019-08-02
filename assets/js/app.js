@@ -48,7 +48,8 @@ $("#accept").on("click", function () {
 
         var myRandom = getRandomItem(businesses);
 
-        console.log(myRandom)
+        console.log("Your restaurant for today is:");
+        console.log(myRandom);
      
     }); 
 
@@ -73,8 +74,8 @@ $("#awesome").on("click", function () {
 
 });
 
-$("#another").on("click", function () {
+$("#notquite").on("click", function () {
 
-
+    
 
 });
