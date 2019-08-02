@@ -1,60 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/js/app.js"></script>
 
-    <script async
-    src="https://maps.googleapis.com/maps/api/js?key=API_KEY">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=API_KEY">
     </script>
-    
-    <title>Eating Website</title>
+
+    <title>What to Eat</title>
 
 
 </head>
+
 <body>
-    <div id="background-img">
-        <div>
-            <br>
-            <br>
-            <h1>WhatToEat!!!!!!!</h1>
-            <br>
-            <br>
-            <br>
-            <p id="welcome">
-                Welcome to "WhatToEat". We are an app here to help you where to eat tonight based on parameters. Give us a try!!!
-                <br>
-                <br>
-                <br>
-                <input type="text" id="nameinput"> Go ahead and give us your name.
-                <br>
-                <br>
-                <br>
-                <button id="start">Let's Start!</button>
-            </p>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">What to Eat?!</h1>
+            <p class="lead">Tired of wasting time deciding where to eat? We got you!</p>
+            <hr class="my-4">
+            <p>In what city would you like to eat?</p>
+            <input type="text" id="locationinput" placeholder="Los Angeles">
+
+            <br><br>
+
+            <a class="btn btn-primary btn-lg" id="start" href="#" role="button">Start</a>
         </div>
-        
+
+        <div class="second-page">
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="mymood">
+                        <h3>What are you in the mood for?</h3>
+                    </div>
+                    <div id="fivecategories">
+                        <p>Pick at least five categories</p>
+                    </div>
+
+                    <div class="boxgroup1">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">American</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox2" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox2">Argentinian</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox3" value="option3">
+                            <label class="form-check-label" for="inlineCheckbox3">Barbecue</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox4" value="option4">
+                            <label class="form-check-label" for="inlineCheckbox1">Brazilian</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox5" value="option5">
+                            <label class="form-check-label" for="inlineCheckbox2">Burgers</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox6" value="option6">
+                            <label class="form-check-label" for="inlineCheckbox3">Chinese</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox7" value="option7">
+                            <label class="form-check-label" for="inlineCheckbox1">Ethiopian</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox8" value="option8">
+                            <label class="form-check-label" for="inlineCheckbox2">Greek</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox9" value="option9">
+                            <label class="form-check-label" for="inlineCheckbox3">Italian</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox10" value="option10">
+                            <label class="form-check-label" for="inlineCheckbox1">Japanese</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox11" value="option11">
+                            <label class="form-check-label" for="inlineCheckbox2">Korean</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox12" value="option12">
+                            <label class="form-check-label" for="inlineCheckbox3">Mexican</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox13" value="option13">
+                            <label class="form-check-label" for="inlineCheckbox1">Peruvian</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox14" value="option14">
+                            <label class="form-check-label" for="inlineCheckbox2">Sandwiches</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="catcheckbox15" value="option12">
+                            <label class="form-check-label" for="inlineCheckbox3">Southern</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="dontlike">
+                        <h5>Don't like what you see? Type it in</h5>
+                        <input type="text" id="foodinput" placeholder="Ramen">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="pricerange">
+
+                        <div id="mywallet">
+                            <h3>Pick your price preference</h3>
+                        </div>
+
+                        <div class="boxgroup2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="preicecheckbox1" value="range1">
+                                <label class="form-check-label" for="inlineCheckbox3">Inexpensive</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="preicecheckbox2" value="range2">
+                                <label class="form-check-label" for="inlineCheckbox3">Mid-range</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="preicecheckbox3" value="range3">
+                                <label class="form-check-label" for="inlineCheckbox3">Upscale</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="preicecheckbox4" value="range4">
+                                <label class="form-check-label" for="inlineCheckbox3">Baller Status</label>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <button type="button" class="btn btn-info btn-md" id="continue">Continue</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="third-page">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="yourcateogry">
+                        <h3>Your category for today is:</h3>
+                    </div>
+
+                    <div id="accept-decline1">
+                        <p>Click Accept to continue onto restaurant.</p>
+                        <p>Click Decline to get a different category.</p>
+                    </div>
+
+                    <button type="button" class="btn btn-success">Accept</button>
+                    <button type="button" class="btn btn-danger">Decline</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fourthpage">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div id="yourrestaurant">
+                        <h3>Your restaurant for today is:</h3>
+                    </div>
+
+                    <div id="accept-decline2">
+                        <p>Click Accept to get restaurant details</p>
+                        <p>Click Decline to get a different restaurant.</p>
+                    </div>
+
+                    <button type="button" class="btn btn-success">Awesome</button>
+                    <button type="button" class="btn btn-danger">Let's Try Again</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="fifthpage">
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div id="finalchoice">
+                        <h3>Have a wonderful time!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-<<<<<<< HEAD
-    <button id="notquite">Not Quite</button>
- 
-=======
->>>>>>> cf0e3e53cc5bd884626aa74ff7f93fc792d0c67a
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -64,4 +231,5 @@
     <script type="text/javascript" src="assets/js/app.js"></script>
 
 </body>
+
 </html>
