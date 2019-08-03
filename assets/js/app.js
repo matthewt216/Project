@@ -20,6 +20,7 @@ var googleapi = config.GOOGLE;
 var location_name;
 var location1;
 
+
 $("#submit1").on("click", function () {
     event.preventDefault();
     name = $("#name").val();
