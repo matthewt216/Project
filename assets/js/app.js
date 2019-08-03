@@ -17,11 +17,14 @@ var curlat;
 var curlong;
 var yelpapi = config.APISECRET;
 var googleapi = config.GOOGLE;
-$("#submit1").on("click", function(){
+var location_name;
+var location1;
+
+$("#submit1").on("click", function () {
     event.preventDefault();
     name = $("#name").val();
     console.log(name);
-    if (name != ""){
+    if (name != "") {
         $("#hello").html("<h1>Hello " + name + "!</h1>");
     }
     else {
@@ -29,7 +32,10 @@ $("#submit1").on("click", function(){
     }
     $("#nameform").hide();
     $("#locationform").show();
+    getLocation();
+
 });
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setPosition);
@@ -38,50 +44,75 @@ function getLocation() {
         console.log("Not supported");
     }
 }
-function setPosition (position) {
+
+function setPosition(position) {
     curlat = position.coords.latitude;
     curlong = position.coords.longitude;
     console.log(curlat + " " + curlong);
-    location1 = {lat: curlat, lng: curlong};
+    location1 = { lat: curlat, lng: curlong };
+    var geocoder = new google.maps.Geocoder;
+
+    geocodeLatLng(geocoder);
 }
-$("#submit2").on("click", function(){
+
+
+function geocodeLatLng(geocoder) {
+    var latlng = { lat: curlat, lng: curlong };
+
+    geocoder.geocode({ 'location': latlng }, function (results, status) {
+        if (status === 'OK') {
+            if (results[0]) {
+                
+              location_name = results[0].address_components[2].long_name
+            
+              $("input[id=location]").val(location_name)
+
+                console.log(location_name)
+                };
+            } else {
+                window.alert('No results found');
+            }
+    })
+    };
+
+$("#submit2").on("click", function () {
     event.preventDefault();
-    location1 = $("#location").val();
-    if ($("#location").val() === ""){
-        getLocation();
+
+   // location1 = $("#location").val();
+    if ($("#location").val() === "") {
         $("#locationform").hide();
         $("#listrow1").show();
     }
     else {
-        console.log(location1);
+       // console.log(location1);
         $("#locationform").hide();
         $("#listrow1").show();
     }
 });
-$("#submit3").on("click", function(){
+$("#submit3").on("click", function () {
     $("#prices").show();
     $("#listrow1").hide();
 })
-$("#reset1").on("click", function(){
+$("#reset1").on("click", function () {
     console.log(name);
 });
-$("#back1").on("click", function(){
+$("#back1").on("click", function () {
     $("#nameform").show();
     $("#locationform").hide();
 });
-$("#back2").on("click", function(){
+$("#back2").on("click", function () {
     $("#locationform").show();
     $("#listrow1").hide();
 })
-$("#back3").on("click", function(){
+$("#back3").on("click", function () {
     $("#listrow1").show();
     $("#prices").hide();
 })
-$("#back4").on("click", function(){
+$("#back4").on("click", function () {
     $("#prices").show();
     $("#choice").hide();
 })
-$("#resetall").on("click", function(){
+$("#resetall").on("click", function () {
     $("#result").hide();
     $("#nameform").show();
     $("#name").val("");
@@ -111,96 +142,96 @@ $("#resetall").on("click", function(){
     seafood = false;
     foodarray = [];
 });
-$("#bar").on("click", function(){
-    if (bar === false){
+$("#bar").on("click", function () {
+    if (bar === false) {
         $(this).css("background-color", "red");
         bar = true;
         search = "bar";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         bar = false;
     }
 })
-$("#pizza").on("click", function(){
-    if (pizza === false){
+$("#pizza").on("click", function () {
+    if (pizza === false) {
         $(this).css("background-color", "red");
         pizza = true;
         search = "pizza";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         pizza = false;
     }
 })
-$("#rice").on("click", function(){
-    if (rice === false){
+$("#rice").on("click", function () {
+    if (rice === false) {
         $(this).css("background-color", "red");
         rice = true;
         search = "rice";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         rice = false;
     }
 })
-$("#med").on("click", function(){
-    if (med === false){
+$("#med").on("click", function () {
+    if (med === false) {
         $(this).css("background-color", "red");
         med = true;
         search = "mediterranean";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         med = false;
     }
 })
-$("#chicken").on("click", function(){
-    if (chicken === false){
+$("#chicken").on("click", function () {
+    if (chicken === false) {
         $(this).css("background-color", "red");
         chicken = true;
         search = "chicken";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         chicken = false;
     }
 })
-$("#desserts").on("click", function(){
-    if (desserts === false){
+$("#desserts").on("click", function () {
+    if (desserts === false) {
         $(this).css("background-color", "red");
         desserts = true;
         search = "dessert";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         desserts = false;
     }
 })
-$("#salads").on("click", function(){
-    if (salad === false){
+$("#salads").on("click", function () {
+    if (salad === false) {
         $(this).css("background-color", "red");
         salad = true;
         search = "salad"
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         salad = false;
     }
 })
-$("#seafood").on("click", function(){
-    if (seafood === false){
+$("#seafood").on("click", function () {
+    if (seafood === false) {
         $(this).css("background-color", "red");
         seafood = true;
         search = "seafood";
     }
-    else{
+    else {
         $(this).css("background-color", "white");
         seafood = false;
     }
 })
 var choice = 0;
-$("#d1").on("click", function(){
+$("#d1").on("click", function () {
     $(this).css("background-color", "red");
     $("#d2").css("background-color", "white");
     $("#d3").css("background-color", "white");
@@ -208,7 +239,7 @@ $("#d1").on("click", function(){
     choice = 1;
     console.log(choice);
 });
-$("#d2").on("click", function(){
+$("#d2").on("click", function () {
     $(this).css("background-color", "red");
     $("#d1").css("background-color", "white");
     $("#d3").css("background-color", "white");
@@ -216,7 +247,7 @@ $("#d2").on("click", function(){
     choice = 2;
     console.log(choice);
 });
-$("#d3").on("click", function(){
+$("#d3").on("click", function () {
     $(this).css("background-color", "red");
     $("#d1").css("background-color", "white");
     $("#d2").css("background-color", "white");
@@ -224,7 +255,7 @@ $("#d3").on("click", function(){
     choice = 3;
     console.log(choice);
 });
-$("#d4").on("click", function(){
+$("#d4").on("click", function () {
     $(this).css("background-color", "red");
     $("#d1").css("background-color", "white");
     $("#d2").css("background-color", "white");
@@ -235,43 +266,46 @@ $("#d4").on("click", function(){
 var foodarray = [];
 var chosenfood;
 var queryURL;
-$("#submit4").on("click", function(){
+$("#submit4").on("click", function () {
     $("#prices").hide();
     $("#choice").show();
     console.log(search);
-    if ($("#location").val() === ""){
-        queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+search+"&latitude=" + curlat + "&longitude=" + curlong + "&price=" + choice;
-    }
-    else{
-        queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+search+"&location=" + location1 + "&price=" + choice;
-    }
-$.ajax({
-    url: queryURL,
-    headers: {
-        'Authorization': 'Bearer ' + yelpapi
-    },
-    method: "GET",
-    dataType: "json",
-    success: function(data){
-        var resources1 = data.businesses;
-        console.log(data);
-        for (i = 0; i < resources1.length; i++){
-            foodarray.push(resources1[i]);
+    queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&latitude=" + curlat + "&longitude=" + curlong + "&price=" + choice;
+
+    // if ($("#location").val() === "") {
+
+    //     queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&latitude=" + curlat + "&longitude=" + curlong + "&price=" + choice;
+    // }
+    // else {
+    //     queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&location=" + location1 + "&price=" + choice;
+    // }
+    $.ajax({
+        url: queryURL,
+        headers: {
+            'Authorization': 'Bearer ' + yelpapi
+        },
+        method: "GET",
+        dataType: "json",
+        success: function (data) {
+            var resources1 = data.businesses;
+            console.log(data);
+            for (i = 0; i < resources1.length; i++) {
+                foodarray.push(resources1[i]);
+            }
+            curlat = data.region.center.latitude;
+            curlong = data.region.center.longitude;
+            console.log(curlat);
+            console.log(curlong);
+            console.log(foodarray);
+            chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
+            $("#rest").attr("src", chosenfood.image_url);
+            $("#rest").attr("alt", "LOADING");
+            $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
+            console.log(queryURL);
         }
-        curlat = data.region.center.latitude;
-        curlong = data.region.center.longitude;
-        console.log(curlat);
-        console.log(curlong);
-        console.log(foodarray);
-        chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
-        $("#rest").attr("src", chosenfood.image_url);
-        $("#rest").attr("alt", "LOADING");
-        $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
-        console.log(queryURL);
-    }
+    });
 });
-});
-$("#agree").on("click", function(){
+$("#agree").on("click", function () {
     $("#result").show();
     $("#choice").hide();
     console.log(chosenfood);
@@ -281,8 +315,9 @@ $("#agree").on("click", function(){
     $("#history").append(row);
     initMap();
 });
-$("#decline").on("click", function(){
-    if (foodarray.length != 1){
+
+$("#decline").on("click", function () {
+    if (foodarray.length != 1) {
         foodarray.splice(foodarray.indexOf(chosenfood), 1);
         console.log(foodarray);
         chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
@@ -298,28 +333,28 @@ function initMap() {
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var directionsService = new google.maps.DirectionsService;
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-      center: {lat: ((curlat + chosenfood.coordinates.latitude) / 2), lng: ((curlong + chosenfood.coordinates.longitude) / 2)}
+        zoom: 14,
+        center: { lat: ((curlat + chosenfood.coordinates.latitude) / 2), lng: ((curlong + chosenfood.coordinates.longitude) / 2) }
     });
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById("directions"));
     var control = document.getElementById('floating-panel');
-    
+
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
     calculateAndDisplayRoute(directionsService, directionsDisplay);
-  }
+}
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     var selectedMode = "DRIVING";
     directionsService.route({
-      origin: location1, 
-      destination: {lat: chosenfood.coordinates.latitude, lng: chosenfood.coordinates.longitude}, 
-      travelMode: google.maps.TravelMode[selectedMode]
-    }, function(response, status) {
-      if (status == 'OK') {
-        directionsDisplay.setDirections(response);
-      } else {
-        console.log('Directions request failed due to ' + status);
-      }
+        origin: location1,
+        destination: { lat: chosenfood.coordinates.latitude, lng: chosenfood.coordinates.longitude },
+        travelMode: google.maps.TravelMode[selectedMode]
+    }, function (response, status) {
+        if (status == 'OK') {
+            directionsDisplay.setDirections(response);
+        } else {
+            console.log('Directions request failed due to ' + status);
+        }
     });
-  }
+}
