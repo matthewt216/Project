@@ -122,6 +122,13 @@ $("#bar").on("click", function(){ // clicking on the bar button results in all o
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         bar = true; 
+        pizza = false;
+        rice = false;
+        med = false;
+        chicken = false;
+        desserts = false;
+        salad = false;
+        seafood = false;
         search = "bar"; // sets the search variable to the string "bar"
     }
     else{
@@ -140,6 +147,13 @@ $("#pizza").on("click", function(){
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         pizza = true;
+        bar = false; 
+        rice = false;
+        med = false;
+        chicken = false;
+        desserts = false;
+        salad = false;
+        seafood = false;
         search = "pizza";
     }
     else{
@@ -158,6 +172,13 @@ $("#rice").on("click", function(){
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         rice = true;
+        bar = false; 
+        med = false;
+        chicken = false;
+        desserts = false;
+        salad = false;
+        seafood = false;
+        pizza = false;
         search = "rice";
     }
     else{
@@ -175,7 +196,14 @@ $("#med").on("click", function(){
         $("#desserts").css("background-color", "white");
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
+        rice = false;
+        bar = false; 
         med = true;
+        chicken = false;
+        desserts = false;
+        salad = false;
+        seafood = false;
+        pizza = false;
         search = "mediterranean";
     }
     else{
@@ -194,6 +222,13 @@ $("#chicken").on("click", function(){
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         chicken = true;
+        rice = false;
+        bar = false; 
+        med = false;
+        desserts = false;
+        salad = false;
+        seafood = false;
+        pizza = false;
         search = "chicken";
     }
     else{
@@ -212,6 +247,13 @@ $("#desserts").on("click", function(){
         $("#salads").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         desserts = true;
+        rice = false;
+        bar = false; 
+        med = false;
+        chicken = false;
+        salad = false;
+        seafood = false;
+        pizza = false;
         search = "dessert";
     }
     else{
@@ -230,6 +272,13 @@ $("#salads").on("click", function(){
         $("#pizza").css("background-color", "white");
         $("#seafood").css("background-color", "white");
         salad = true;
+        rice = false;
+        bar = false; 
+        med = false;
+        chicken = false;
+        desserts = false;
+        seafood = false;
+        pizza = false;
         search = "salad"
     }
     else{
@@ -248,6 +297,13 @@ $("#seafood").on("click", function(){
         $("#salads").css("background-color", "white");
         $("#pizza").css("background-color", "white");
         seafood = true;
+        rice = false;
+        bar = false; 
+        med = false;
+        chicken = false;
+        desserts = false;
+        salad = false;
+        pizza = false;
         search = "seafood";
     }
     else{
