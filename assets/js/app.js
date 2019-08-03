@@ -40,7 +40,7 @@
 var baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?'
 
 
-var category = $(".checkbox:checked").val()
+//var cat = $(".form-check-input:checked").val()
 var cat = ['japanese', 'korean', 'thai']
 var radius = '16093'
 var longitude = -118.243683
