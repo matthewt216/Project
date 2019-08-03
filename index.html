@@ -5,46 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmWbaHcOlSWO45S3jQmJ3t1Hcz8hsVDE"></script>
+    <script type='text/javascript' src='./config.js'></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+ 
+
 
     <title>Project</title>
 
 </head>
 
 <body>
-
-    <div class="container">
-
-        <div class="page1">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron" id="nameform">
-                        <h1 class="display-4">What to Eat?!!</h1>
-                        <p class="lead">Tired of wasting time deciding where to eat? We got you!</p>
-                        <p class="my-4">What is your name? (optional)</p>
-                        <input type="text" id="name" required />
-                        <br>
-                        <br>
-                        <a class="btn btn-primary btn-lg" href="" id="submit1" type="submit" role="button">Submit</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <!-- <div class="row">
-                <div class="col-sm-12">
-                    <table id="history">
-                        <th id="pastsearches">Previous Searches</th>
-                    </table>
-                </div>
+    <table id="history">
+            <th>Previous Searches</th>
+    </table>
+    <form id="nameform" class="w3-container w3-center w3-animate-opacity">
+        <h1>Welcome to the FoodRestaurant App</h1>
+        <h1>(Optional) What is your name?</h1>
+        <input type="text" id="name" required/>
+        <br>
+        <br>
+        <input type="submit" id="submit1">
+        <input type="reset" id="reset1">
+    </form>
+    <form id="locationform" class="w3-container w3-center w3-animate-opacity">
+        <h1 id="hello"></h1>
+        <h1>What is your address?</h1>
+        <p id="location"></p>
+        <br>
+        <br>
+        <input type="submit" id="submit2">
+        <input type="button" id="back1" value="Back">
+    </form>
+    <div id="listrow1" class="w3-container w3-center w3-animate-opacity">
+        <h1>Great! Choose your food categories.</h1>
+        <button id="bar">Bar Food</button>
+        <button id="pizza">Pizza</button>
+        <button id="rice">Rice-bowls</button>
+        <button id="med">Mediterranean</button>
+        <button id="chicken">Chicken</button>
+        <button id="desserts">Desserts</button>
+        <button id="salads">Salads</button>
+        <button id="seafood">Seafood</button>
+        <br>
+        <br>
+        <input type="submit" id="submit3">
+        <input type="button" id="back2" value="Back">
+    </div>
+    <div id="prices" class="w3-container w3-center w3-animate-opacity">
+        <h1>Select a price ($ = under $10, $$ = $11-$30, $$$ = $31-$60, $$$$ = over $61)</h1>
+        <br>
+        <button id="d1">$</button>
+        <button id="d2">$$</button>
+        <button id="d3">$$$</button>
+        <button id="d4">$$$$</button>
+        <br>
+        <br>
+        <input type="submit" id="submit4">
+        <input type="button" id="back3" value="Back">
+    </div>
+    <div id="choice">
+        <img id="rest" width="200px" height="200px">
+        <h2 id="namecomp"></h2>
+        <br>
+        <button id="agree">Accept</button>
+        <button id="decline">Decline</button>
+        <br>
+        <br>
+        <input type="button" id="back4" value="Back">
+    </div>
+    <div id="result">
+        <h1 id="locator1"></h1>
+        <br>
+        <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+                <option value="DRIVING">Driving</option>
+            </select>
             </div>
         </div>
- -->
+ 
 
 
         <form id="locationform" class="w3-container w3-center w3-animate-opacity">
@@ -108,6 +156,9 @@
             <input type="button" id="resetall" value="Start Over">
         </div>
     </div>
+
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type='text/javascript' src='config.js'></script>
