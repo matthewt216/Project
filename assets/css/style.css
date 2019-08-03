@@ -1,3 +1,11 @@
+
+
+#nameform, #locationform, #listrow1{
+    text-align: center;
+    margin: 300px 30px 30px 30px;
+    color: black;
+}
+=======
 .selector-for-some-widget {
     box-sizing: content-box;
   }
@@ -103,3 +111,4 @@ img {
 #acceptdecline {
     text-align: center
 } */
+
