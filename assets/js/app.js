@@ -1,10 +1,10 @@
-$("#locationform").hide();
+$("#locationform").hide(); // hides all of the pages to come in the future
 $("#listrow1").hide();
 $("#prices").hide();
 $("#choice").hide();
 $("#result").hide();
 
-var bar = false;
+var bar = false; // declares the variables for the categories false to indicate that those categories were not selected
 var pizza = false;
 var rice = false;
 var med = false;
@@ -15,9 +15,9 @@ var seafood = false;
 var search;
 var curlat;
 var curlong;
-var yelpapi = config.APISECRET;
+var yelpapi = config.APISECRET; // declares variables to hold the apis to conceal them
 var googleapi = config.GOOGLE;
-$("#submit1").on("click", function(){
+$("#submit1").on("click", function(){ // clicking submit1 results in hiding the nameform and showing the locationform
     event.preventDefault();
     name = $("#name").val();
     console.log(name);
@@ -30,7 +30,7 @@ $("#submit1").on("click", function(){
     $("#nameform").hide();
     $("#locationform").show();
 });
-function getLocation() {
+function getLocation() { // gets current position
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setPosition);
     }
@@ -38,14 +38,14 @@ function getLocation() {
         console.log("Not supported");
     }
 }
-function setPosition (position) {
+function setPosition (position) { // sets the variables curlat and curlong to the location coordinates of the person's current position
     curlat = position.coords.latitude;
     curlong = position.coords.longitude;
     console.log(curlat + " " + curlong);
     location1 = {lat: curlat, lng: curlong};
 }
-$("#submit2").on("click", function(){
-    event.preventDefault();
+$("#submit2").on("click", function(){ // 
+    event.preventDefault(); // forbids the page to refresh after clicking on the submit2 button
     location1 = $("#location").val();
     if ($("#location").val() === ""){
         getLocation();
@@ -81,7 +81,7 @@ $("#back4").on("click", function(){
     $("#prices").show();
     $("#choice").hide();
 })
-$("#resetall").on("click", function(){
+$("#resetall").on("click", function(){ // basically sets everything to their original forms
     $("#result").hide();
     $("#nameform").show();
     $("#name").val("");
@@ -111,20 +111,34 @@ $("#resetall").on("click", function(){
     seafood = false;
     foodarray = [];
 });
-$("#bar").on("click", function(){
+$("#bar").on("click", function(){ // clicking on the bar button results in all of the other category buttons to be set to the white color 
     if (bar === false){
         $(this).css("background-color", "red");
-        bar = true;
-        search = "bar";
+        $("#pizza").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
+        bar = true; 
+        search = "bar"; // sets the search variable to the string "bar"
     }
     else{
-        $(this).css("background-color", "white");
-        bar = false;
+        $(this).css("background-color", "white"); // the button is unclicked and is white when bar is true
+        bar = false; // sets the bar variable back to false
     }
 })
 $("#pizza").on("click", function(){
     if (pizza === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         pizza = true;
         search = "pizza";
     }
@@ -136,6 +150,13 @@ $("#pizza").on("click", function(){
 $("#rice").on("click", function(){
     if (rice === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         rice = true;
         search = "rice";
     }
@@ -147,6 +168,13 @@ $("#rice").on("click", function(){
 $("#med").on("click", function(){
     if (med === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         med = true;
         search = "mediterranean";
     }
@@ -158,6 +186,13 @@ $("#med").on("click", function(){
 $("#chicken").on("click", function(){
     if (chicken === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         chicken = true;
         search = "chicken";
     }
@@ -169,6 +204,13 @@ $("#chicken").on("click", function(){
 $("#desserts").on("click", function(){
     if (desserts === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         desserts = true;
         search = "dessert";
     }
@@ -180,6 +222,13 @@ $("#desserts").on("click", function(){
 $("#salads").on("click", function(){
     if (salad === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
+        $("#seafood").css("background-color", "white");
         salad = true;
         search = "salad"
     }
@@ -191,6 +240,13 @@ $("#salads").on("click", function(){
 $("#seafood").on("click", function(){
     if (seafood === false){
         $(this).css("background-color", "red");
+        $("#bar").css("background-color", "white");
+        $("#rice").css("background-color", "white");
+        $("#med").css("background-color", "white");
+        $("#chicken").css("background-color", "white");
+        $("#desserts").css("background-color", "white");
+        $("#salads").css("background-color", "white");
+        $("#pizza").css("background-color", "white");
         seafood = true;
         search = "seafood";
     }
@@ -199,13 +255,13 @@ $("#seafood").on("click", function(){
         seafood = false;
     }
 })
-var choice = 0;
-$("#d1").on("click", function(){
+var choice = 0; // the default for choice is 0
+$("#d1").on("click", function(){ // clicking on the first money value results in its button being set to the color red while the other money buttons are set to white
     $(this).css("background-color", "red");
     $("#d2").css("background-color", "white");
     $("#d3").css("background-color", "white");
     $("#d4").css("background-color", "white");
-    choice = 1;
+    choice = 1; // sets the choice value to 1 to indicate to the app that the user picked the first money option
     console.log(choice);
 });
 $("#d2").on("click", function(){
@@ -232,46 +288,46 @@ $("#d4").on("click", function(){
     choice = 4;
     console.log(choice);
 });
-var foodarray = [];
+var foodarray = []; // sets an empty array to foodarray
 var chosenfood;
 var queryURL;
-$("#submit4").on("click", function(){
+$("#submit4").on("click", function(){ // clicking on the submit4 button 
     $("#prices").hide();
     $("#choice").show();
     console.log(search);
-    if ($("#location").val() === ""){
+    if ($("#location").val() === ""){ // sets the location to its latitude and longitude values if the location value is blank
         queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+search+"&latitude=" + curlat + "&longitude=" + curlong + "&price=" + choice;
     }
-    else{
+    else{ // sets the location to the location value
         queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+search+"&location=" + location1 + "&price=" + choice;
     }
-$.ajax({
+$.ajax({ // ajax calls the queryURL in yelp to get the data
     url: queryURL,
     headers: {
-        'Authorization': 'Bearer ' + yelpapi
+        'Authorization': 'Bearer ' + yelpapi // authorizes the user to use the yelp api
     },
     method: "GET",
     dataType: "json",
     success: function(data){
-        var resources1 = data.businesses;
+        var resources1 = data.businesses; 
         console.log(data);
         for (i = 0; i < resources1.length; i++){
             foodarray.push(resources1[i]);
         }
-        curlat = data.region.center.latitude;
+        curlat = data.region.center.latitude; // sets the latitude and longitude to the current location based on what the user inputed into the location form
         curlong = data.region.center.longitude;
         console.log(curlat);
         console.log(curlong);
         console.log(foodarray);
-        chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
-        $("#rest").attr("src", chosenfood.image_url);
-        $("#rest").attr("alt", "LOADING");
-        $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
+        chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)]; // randomly chooses an element from the foodarray array
+        $("#rest").attr("src", chosenfood.image_url); // sets the src for the element with the rest id to the image for the chosenfood
+        $("#rest").attr("alt", "LOADING"); // sets the src to LOADING if the image has not shown
+        $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name); // shows the proposed restuarant
         console.log(queryURL);
     }
 });
 });
-$("#agree").on("click", function(){
+$("#agree").on("click", function(){ // clicking on agree leads the user to the map page with the directions
     $("#result").show();
     $("#choice").hide();
     console.log(chosenfood);
@@ -279,9 +335,9 @@ $("#agree").on("click", function(){
     var row = $("<tr>");
     row.append($("<td>").text(chosenfood.name + " in " + chosenfood.location.city + ", " + chosenfood.location.state));
     $("#history").append(row);
-    initMap();
+    initMap(); // creates the map
 });
-$("#decline").on("click", function(){
+$("#decline").on("click", function(){ // clicking on decline goes back to the array and deletes the declined item and randomly chooses another item
     if (foodarray.length != 1){
         foodarray.splice(foodarray.indexOf(chosenfood), 1);
         console.log(foodarray);
@@ -291,34 +347,34 @@ $("#decline").on("click", function(){
         console.log(queryURL);
     }
     else {
-        console.log("Stop");
+        console.log("Stop"); // stops whenever the foodarray is 1; this ensures that the user knows when the list ends and stop clicking on the decline button
     }
 });
-function initMap() {
+function initMap() { // creates a map from google
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var directionsService = new google.maps.DirectionsService;
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
-      center: {lat: ((curlat + chosenfood.coordinates.latitude) / 2), lng: ((curlong + chosenfood.coordinates.longitude) / 2)}
+      center: {lat: ((curlat + chosenfood.coordinates.latitude) / 2), lng: ((curlong + chosenfood.coordinates.longitude) / 2)} // creates the center using the averages of the position of the person and the position of the restaurant
     });
     directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById("directions"));
+    directionsDisplay.setPanel(document.getElementById("directions")); 
     var control = document.getElementById('floating-panel');
     
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
+    calculateAndDisplayRoute(directionsService, directionsDisplay); // calls the calculateanddisplayroute function
   }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-    var selectedMode = "DRIVING";
-    directionsService.route({
+function calculateAndDisplayRoute(directionsService, directionsDisplay) { // calculates and displays the route on the google map
+    var selectedMode = "DRIVING"; // sets the mode to driving
+    directionsService.route({ // calculates the route and displays the route onto the google map
       origin: location1, 
       destination: {lat: chosenfood.coordinates.latitude, lng: chosenfood.coordinates.longitude}, 
       travelMode: google.maps.TravelMode[selectedMode]
     }, function(response, status) {
       if (status == 'OK') {
         directionsDisplay.setDirections(response);
-      } else {
+      } else { // if anything fails, the console lets you know
         console.log('Directions request failed due to ' + status);
       }
     });
