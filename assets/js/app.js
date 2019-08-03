@@ -379,6 +379,7 @@ $.ajax({ // ajax calls the queryURL in yelp to get the data
         $("#rest").attr("src", chosenfood.image_url); // sets the src for the element with the rest id to the image for the chosenfood
         $("#rest").attr("alt", "LOADING"); // sets the src to LOADING if the image has not shown
         $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name); // shows the proposed restuarant
+        $("#rating").text("Rating: " + chosenfood.rating + " stars (# of reviews: " + chosenfood.review_count + ")");
         console.log(queryURL);
     }
 });
@@ -400,6 +401,7 @@ $("#decline").on("click", function(){ // clicking on decline goes back to the ar
         chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
         $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
         $("#rest").attr("src", chosenfood.image_url);
+        $("#rating").text("Rating: " + chosenfood.rating + " stars (# of reviews: " + chosenfood.review_count + ")"); // displays the rating and the number of reviews
         console.log(queryURL);
     }
     else {
