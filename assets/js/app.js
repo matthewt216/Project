@@ -66,7 +66,7 @@ function geocodeLatLng(geocoder) {
                 
               location_name = results[0].address_components[2].long_name
             
-              $("input[id=location]").val(location_name)
+              $("#location").text(location_name)
 
                 console.log(location_name)
                 };
