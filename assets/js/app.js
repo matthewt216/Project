@@ -87,7 +87,8 @@ $("#accept").on("click", function () {
 
         var myRandom = getRandomItem(businesses);
 
-        console.log(myRandom)
+        console.log("Your restaurant for today is:");
+        console.log(myRandom);
      
     }); 
 
@@ -95,8 +96,11 @@ $("#accept").on("click", function () {
 
 $("#decline").on("click", function () {
 
-
-
+    console.log(yourCategory);
+    cat.splice(cat.indexOf(yourCategory), 1);
+    console.log(cat);
+    yourCategory = getRandomItem(cat);
+    console.log(yourCategory);
 });
 
 
@@ -105,11 +109,11 @@ $("#awesome").on("click", function () {
 
     console.log("Awesome, enjoy your meal!");
 
-    var showResults;
+    var showRestaurant;
 
 });
 
-$("#another").on("click", function () {
+$("#notquite").on("click", function () {
 
     
 
