@@ -1,11 +1,51 @@
+
+
+body, html {
+    background: url(../img/dinner3.jpg) no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+.jumbotron {
+    background: none;
+    margin: auto; 
+
 #nameform, #locationform, #listrow1, #prices{
+
     text-align: center;
-    margin: 200px 30px 30px 30px;
+    margin-top: 50px;
+}
+
+.display-4 {
+    color: white;
+    font-weight: bolder;
+    font-size: 80px;
+}
+
+.lead {
+  
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.my-4 {
     color: black;
+    font-weight: bolder;
 }
-button{
+
+
+
+/* #nameform, #locationform, #listrow1, #prices{
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+    color: black;
+} */
+/* button{
     background-color: white;
-}
+} */
 #choice{
     text-align: center;
     margin: 200px 30px 30px 30px;
