@@ -1,6 +1,26 @@
 
-#nameform, #locationform, #listrow1{
+#nameform, #locationform, #listrow1, #prices{
     text-align: center;
-    margin: 300px 30px 30px 30px;
+    margin: 200px 30px 30px 30px;
     color: black;
+}
+button{
+    background-color: white;
+}
+#choice{
+    text-align: center;
+    margin: 200px 30px 30px 30px;
+    color: black;
+}
+#map{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin: 50px 30px 30px 600px;
+}
+#locator1{
+    text-align: center;
+}
+#back5{
+    text-align: center;
 }
