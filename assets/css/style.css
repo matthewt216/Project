@@ -1,4 +1,5 @@
 
+
 body, html {
     background: url(../img/dinner3.jpg) no-repeat center center; 
     -webkit-background-size: 100% 100%;
@@ -11,6 +12,9 @@ body, html {
 .jumbotron {
     background: none;
     margin: auto; 
+
+#nameform, #locationform, #listrow1, #prices{
+
     text-align: center;
     margin-top: 50px;
 }
