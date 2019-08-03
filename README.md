@@ -2,7 +2,7 @@
 # Project
 
 
-# libraies
+# libraries
 * jquery
 * yelp api
 * google api
