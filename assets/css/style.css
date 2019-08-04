@@ -50,6 +50,10 @@ button {
     margin: 20px;  
 }
 
+p {
+    font-size: 2em;
+    color:white;
+}
 /* #nameform, #locationform, #listrow1, #prices{
     text-align: center;
     margin: 30px 30px 30px 30px;
