@@ -420,34 +420,34 @@ $("#vegeterian").on("click", function () {
 })
 var choice = 0; // the default for choice is 0
 $("#d1").on("click", function(){ // clicking on the first money value results in its button being set to the color red while the other money buttons are set to white
-    $(this).css("background-color", "red");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 1; // sets the choice value to 1 to indicate to the app that the user picked the first money option
     console.log(choice);
 });
 $("#d2").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 2;
     console.log(choice);
 });
 $("#d3").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 3;
     console.log(choice);
 });
 $("#d4").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
     choice = 4;
     console.log(choice);
 });
@@ -488,6 +488,7 @@ $("#submit4").on("click", function () {
             chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
             $("#rest").attr("src", chosenfood.image_url);
             $("#rest").attr("alt", "LOADING");
+            $("#namecomp").addClass("display-5");
             $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
             console.log(queryURL);
         }

@@ -38,20 +38,22 @@ body, html {
 }
 
 #pastsearches {
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
-#back1 {
+#back1, #back2, #back3, #decline {
     margin-left: 20px;
 }
 
-button {
-    margin: 20px;  
+.categorybuttons {
+    margin-top: 20px;  
+    margin-left: 20px;
 }
 
 p {
     font-size: 2em;
+    font-weight: bolder;
     color:white;
 }
 /* #nameform, #locationform, #listrow1, #prices{

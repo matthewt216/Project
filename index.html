@@ -41,15 +41,15 @@
                         <br>
                         <br>
                         <a class="btn btn-primary btn-lg" href="" id="submit1" type="submit" role="button">Submit</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <table id="history">
-                        <th id="pastsearches">Previous Searches:</th>
-                    </table>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="history">
+                                    <th id="pastsearches">Previous Searches:</th>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,14 +58,13 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="jumbotron" id="locationform">
+                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="locationform">
                         <h1 id="hello"></h1>
-                        <h1 class="lead">What is your Location?</h1>
+                        <h1 class="lead">Your location is:</h1>
                         <br>
                         <p id="location"></p>
                         <br>
-                        <br>
-                        <a class="btn btn-success btn-lg" href="" id="submit2" type="submit" role="button">Accept</a>
+                        <a class="btn btn-info btn-lg" href="" id="submit2" type="submit" role="button">Accept</a>
                         <a class="btn btn-danger btn-lg" href="" id="back1" type="submit" value="Back"
                             role="button">Back</a>
                     </div>
@@ -77,13 +76,13 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="jumbotron" id="listrow1">
-                        <h1 class="display-5">Great! Choose your favorite foods.</h1>
+                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="listrow1">
+                        <h1 class="display-4">Choose your favorite foods.</h1>
 
                         <br>
 
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-12 categorybuttons">
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
                                     id="burgers">Burgers</button>
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
@@ -94,7 +93,8 @@
                                     id="japanese">Japanese</button>
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
                                     id="korean">Korean</button>
-                                    <br>
+                                <br>
+                                <br>
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
                                     id="mexican">Mexican</button>
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
@@ -105,56 +105,75 @@
                                     id="thai">Thai</button>
                                 <button type="button" class="btn btn-outline-warning btn-lg active"
                                     id="vegeterian">Vegeterian</button>
+
                                 <br>
                                 <br>
-                                <input type="submit" id="submit3">
-                                <input type="button" id="back2" value="Back">
+                                <br>
+
+                                <input class="btn btn-info btn-lg" href="" type="submit" id="submit3">
+                                <input class="btn btn-danger btn-lg" href="" type="button" id="back2" value="Back">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="page4">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="prices">
+                        <h1 class="display-4">Please select a price range.</h1>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <button type="button" class="btn btn-outline-success btn-lg active"
+                                    id="d1">Inexpensive</button>
+                                <button type="button" class="btn btn-outline-success btn-lg active"
+                                    id="d2">Mid-Range</button>
+                                <button type="button" class="btn btn-outline-success btn-lg active"
+                                    id="d3">Upsacle</button>
+                                <button type="button" class="btn btn-outline-success btn-lg active" id="d4">Baller
+                                    Status!</button>
+
+                                <br>
+                                <br>
+                                <br>
+
+                                <input class="btn btn-info btn-lg" type="submit" id="submit4">
+                                <input class="btn btn-danger btn-lg" type="button" id="back3" value="Back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page5">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="choice">
+                        <div id="choice">
+                            <img id="rest" width="400px" height="300px">
+                            <h2 id="namecomp"></h2>
+                            <br>
+                            <button class="btn btn-info btn-lg"  id="agree">Accept</button>
+                            <button class="btn btn-danger btn-lg" id="decline">Decline</button>
+                            <br>
+                            <br>
+                            <input class="btn btn-secondary btn-lg" type="button" id="back4" value="Back">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- <div id="listrow1" class="w3-container w3-center w3-animate-opacity">
-            <h1>Great! Choose your food categories.</h1>
-            <button id="bar">Bar Food</button>
-            <button id="pizza">Pizza</button>
-            <button id="rice">Rice-bowls</button>
-            <button id="med">Mediterranean</button>
-            <button id="chicken">Chicken</button>
-            <button id="desserts">Desserts</button>
-            <button id="salads">Salads</button>
-            <button id="seafood">Seafood</button>
-            <br>
-            <br>
-            <input type="submit" id="submit3">
-            <input type="button" id="back2" value="Back">
-        </div> -->
-        <div id="prices" class="w3-container w3-center w3-animate-opacity">
-            <h1>Select a price ($ = under $10, $$ = $11-$30, $$$ = $31-$60, $$$$ = over $61)</h1>
-            <br>
-            <button id="d1">$</button>
-            <button id="d2">$$</button>
-            <button id="d3">$$$</button>
-            <button id="d4">$$$$</button>
-            <br>
-            <br>
-            <input type="submit" id="submit4">
-            <input type="button" id="back3" value="Back">
-        </div>
-        <div id="choice">
-            <img id="rest" width="200px" height="200px">
-            <h2 id="namecomp"></h2>
-            <br>
-            <button id="agree">Accept</button>
-            <button id="decline">Decline</button>
-            <br>
-            <br>
-            <input type="button" id="back4" value="Back">
-        </div>
         <div id="result">
             <h1 id="locator1"></h1>
             <br>
