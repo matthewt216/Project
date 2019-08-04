@@ -4,14 +4,16 @@ $("#prices").hide();
 $("#choice").hide();
 $("#result").hide();
 
-var bar = false; // declares the variables for the categories false to indicate that those categories were not selected
-var pizza = false;
-var rice = false;
-var med = false;
+var burgers = false; // declares the variables for the categories false to indicate that those categories were not selected
 var chicken = false;
-var desserts = false;
-var salad = false;
-var seafood = false;
+var dessert = false;
+var japanese = false;
+var korean = false;
+var mexican = false;
+var pizza = false;
+var sandwiches = false;
+var thai = false;
+var vegeterian = false;
 var search;
 var curlat;
 var curlong;
@@ -26,10 +28,12 @@ $("#submit1").on("click", function () {
     name = $("#name").val();
     console.log(name);
     if (name != "") {
-        $("#hello").html("<h1>Hello " + name + "!</h1>");
+        $("#hello").addClass("display-4");
+        $("#hello").text("Hello " + name + "!");
     }
     else {
-        $("#hello").html("<h1>Hello!</h1>");
+        $("#hello").addClass("display-4");
+        $("#hello").text("Hello!");
     }
     $("#nameform").hide();
     $("#locationform").show();
@@ -94,9 +98,6 @@ $("#submit3").on("click", function () {
     $("#prices").show();
     $("#listrow1").hide();
 })
-$("#reset1").on("click", function () {
-    console.log(name);
-});
 $("#back1").on("click", function () {
     $("#nameform").show();
     $("#locationform").hide();
@@ -118,14 +119,16 @@ $("#resetall").on("click", function () {
     $("#nameform").show();
     $("#name").val("");
     $("#location").val("");
-    $("#bar").css("background-color", "white");
-    $("#pizza").css("background-color", "white");
-    $("#rice").css("background-color", "white");
-    $("#med").css("background-color", "white");
+    $("#burgers").css("background-color", "white");
     $("#chicken").css("background-color", "white");
-    $("#desserts").css("background-color", "white");
-    $("#salads").css("background-color", "white");
-    $("#seafood").css("background-color", "white");
+    $("#dessert").css("background-color", "white");
+    $("#japanese").css("background-color", "white");
+    $("#korean").css("background-color", "white");
+    $("#mexican").css("background-color", "white");
+    $("#pizza").css("background-color", "white");
+    $("#sandwiches").css("background-color", "white");
+    $("#thai").css("background-color", "white");
+    $("#vegeterian").css("background-color", "white");
     $("#d1").css("background-color", "white");
     $("#d2").css("background-color", "white");
     $("#d3").css("background-color", "white");
@@ -133,214 +136,286 @@ $("#resetall").on("click", function () {
     $("#rest").attr("src", "");
     $("#namecomp").text("");
     $("#directions").text("");
-    bar = false;
-    pizza = false;
-    rice = false;
-    med = false;
+    burgers = false;
     chicken = false;
-    desserts = false;
-    salad = false;
-    seafood = false;
+    dessert = false;
+    japanese = false;
+    korean = false;
+    mexican = false;
+    pizza = false;
+    sandwiches = false;
+    thai = false;
+    vegeterian = false;
     foodarray = [];
 });
-$("#bar").on("click", function () {
-    if (bar === false) {
-        $(this).css("background-color", "red");
-        $("#pizza").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        bar = true; 
-        pizza = false;
-        rice = false;
-        med = false;
+$("#burgers").on("click", function () {
+    if (burgers === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#pizza").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        burgers = true; 
         chicken = false;
-        desserts = false;
-        salad = false;
-        seafood = false;
-        search = "bar"; // sets the search variable to the string "bar"
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
+        pizza = false;
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
+        search = "burgers"; // sets the search variable to the string "bar"
     }
     else{
-        $(this).css("background-color", "white"); // the button is unclicked and is white when bar is true
-        bar = false; // sets the bar variable back to false
-    }
-})
-$("#pizza").on("click", function () {
-    if (pizza === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        pizza = true;
-        bar = false; 
-        rice = false;
-        med = false;
-        chicken = false;
-        desserts = false;
-        salad = false;
-        seafood = false;
-        search = "pizza";
-    }
-    else {
-        $(this).css("background-color", "white");
-        pizza = false;
-    }
-})
-$("#rice").on("click", function () {
-    if (rice === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        rice = true;
-        bar = false; 
-        med = false;
-        chicken = false;
-        desserts = false;
-        salad = false;
-        seafood = false;
-        pizza = false;
-        search = "rice";
-    }
-    else {
-        $(this).css("background-color", "white");
-        rice = false;
-    }
-})
-$("#med").on("click", function () {
-    if (med === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        rice = false;
-        bar = false; 
-        med = true;
-        chicken = false;
-        desserts = false;
-        salad = false;
-        seafood = false;
-        pizza = false;
-        search = "mediterranean";
-    }
-    else {
-        $(this).css("background-color", "white");
-        med = false;
+        // $(this).css("background-color", "white"); // the button is unclicked and is white when bar is true
+        burgers = false; // sets the bar variable back to false
     }
 })
 $("#chicken").on("click", function () {
     if (chicken === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
         chicken = true;
-        rice = false;
-        bar = false; 
-        med = false;
-        desserts = false;
-        salad = false;
-        seafood = false;
+        burgers = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
         pizza = false;
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
         search = "chicken";
     }
     else {
-        $(this).css("background-color", "white");
+        // $(this).css("background-color", "white");
         chicken = false;
     }
 })
-$("#desserts").on("click", function () {
-    if (desserts === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        desserts = true;
-        rice = false;
-        bar = false; 
-        med = false;
+$("#dessert").on("click", function () {
+    if (dessert === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        dessert = true;
+        burgers = false; 
         chicken = false;
-        salad = false;
-        seafood = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
         pizza = false;
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
         search = "dessert";
     }
     else {
-        $(this).css("background-color", "white");
-        desserts = false;
+        // $(this).css("background-color", "white");
+        dessert = false;
     }
 })
-$("#salads").on("click", function () {
-    if (salad === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        $("#seafood").css("background-color", "white");
-        salad = true;
-        rice = false;
-        bar = false; 
-        med = false;
-        chicken = false;
-        desserts = false;
-        seafood = false;
+$("#japanese").on("click", function () {
+    if (japanese === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        japanese = true;
+        burgers = false; 
+        chicken = true;
+        dessert = false;
+        korean = false;
+        mexican = false;
         pizza = false;
-        search = "salad"
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
+        search = "japanese";
     }
     else {
-        $(this).css("background-color", "white");
-        salad = false;
+        // $(this).css("background-color", "white");
+        japanese = false;
     }
 })
-$("#seafood").on("click", function () {
-    if (seafood === false) {
-        $(this).css("background-color", "red");
-        $("#bar").css("background-color", "white");
-        $("#rice").css("background-color", "white");
-        $("#med").css("background-color", "white");
-        $("#chicken").css("background-color", "white");
-        $("#desserts").css("background-color", "white");
-        $("#salads").css("background-color", "white");
-        $("#pizza").css("background-color", "white");
-        seafood = true;
-        rice = false;
-        bar = false; 
-        med = false;
-        chicken = false;
-        desserts = false;
-        salad = false;
+$("#korean").on("click", function () {
+    if (korean === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        korean = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        mexican = false;
         pizza = false;
-        search = "seafood";
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
+        search = "korean";
     }
     else {
-        $(this).css("background-color", "white");
-        seafood = false;
+        // $(this).css("background-color", "white");
+        chicken = false;
+    }
+})
+$("#mexican").on("click", function () {
+    if (mexican === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        mexican = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        pizza = false;
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
+        search = "mexican";
+    }
+    else {
+        // $(this).css("background-color", "white");
+        mexican = false;
+    }
+})
+$("#pizza").on("click", function () {
+    if (pizza === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        // $("#seafood").css("background-color", "white");
+        pizza = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
+        sandwiches = false;
+        thai = false;
+        vegeterian = false;
+        search = "pizza";
+    }
+    else {
+        // $(this).css("background-color", "white");
+        pizza = false;
+    }
+})
+$("#sandwiches").on("click", function () {
+    if (sandwiches === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        sandwiches = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
+        pizza = false;
+        thai = false;
+        vegeterian = false;
+        search = "sandwiches";
+    }
+    else {
+        // $(this).css("background-color", "white");
+        sandwiches = false;
+    }
+})
+$("#thai").on("click", function () {
+    if (thai === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        thai = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
+        pizza = false;
+        sandwiches = false;
+        vegeterian = false;
+        search = "thai";
+    }
+    else {
+        // $(this).css("background-color", "white");
+        thai = false;
+    }
+})
+$("#vegeterian").on("click", function () {
+    if (vegeterian === false) {
+        $(this).css("background-color", "rgb(228, 235, 143)");
+        // $("#bar").css("background-color", "white");
+        // $("#rice").css("background-color", "white");
+        // $("#med").css("background-color", "white");
+        // $("#chicken").css("background-color", "white");
+        // $("#desserts").css("background-color", "white");
+        // $("#salads").css("background-color", "white");
+        // $("#pizza").css("background-color", "white");
+        vegeterian = true;
+        burgers = false;
+        chicken = false; 
+        dessert = false;
+        japanese = false;
+        korean = false;
+        mexican = false;
+        pizza = false;
+        sandwiches = false;
+        thai = false;
+        search = "thai";
+    }
+    else {
+        // $(this).css("background-color", "white");
+        thai = false;
     }
 })
 var choice = 0; // the default for choice is 0
