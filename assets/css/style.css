@@ -4,6 +4,7 @@ body, html {
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
+    margin: 0;
     height: 100%;
 }
 
@@ -22,7 +23,7 @@ body, html {
 .display-5 {
     color: white;
     font-weight: bolder;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .lead {
@@ -56,28 +57,11 @@ p {
     font-weight: bolder;
     color:white;
 }
-/* #nameform, #locationform, #listrow1, #prices{
-    text-align: center;
-    margin: 30px 30px 30px 30px;
-    color: black;
-} */
-/* button{
-    background-color: white;
-} */
-/* #choice{
-    text-align: center;
-    margin: 200px 30px 30px 30px;
-    color: black;
+
+#directions {
+    background: white;
 }
-#map{
-    width: 400px;
-    height: 400px;
-    text-align: center;
-    margin: 50px 30px 30px 600px;
-}
-#locator1{
-    text-align: center;
-}
-#back5{
-    text-align: center;
-} */
+
+
+
+

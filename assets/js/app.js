@@ -119,20 +119,20 @@ $("#resetall").on("click", function () {
     $("#nameform").show();
     $("#name").val("");
     $("#location").val("");
-    $("#burgers").css("background-color", "white");
-    $("#chicken").css("background-color", "white");
-    $("#dessert").css("background-color", "white");
-    $("#japanese").css("background-color", "white");
-    $("#korean").css("background-color", "white");
-    $("#mexican").css("background-color", "white");
-    $("#pizza").css("background-color", "white");
-    $("#sandwiches").css("background-color", "white");
-    $("#thai").css("background-color", "white");
-    $("#vegeterian").css("background-color", "white");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    // $("#burgers").css("background-color", "white");
+    // $("#chicken").css("background-color", "white");
+    // $("#dessert").css("background-color", "white");
+    // $("#japanese").css("background-color", "white");
+    // $("#korean").css("background-color", "white");
+    // $("#mexican").css("background-color", "white");
+    // $("#pizza").css("background-color", "white");
+    // $("#sandwiches").css("background-color", "white");
+    // $("#thai").css("background-color", "white");
+    // $("#vegeterian").css("background-color", "white");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     $("#rest").attr("src", "");
     $("#namecomp").text("");
     $("#directions").text("");
@@ -501,7 +501,7 @@ $("#agree").on("click", function () {
     $("#locator1").text("Your directions to " + chosenfood.name);
     var row = $("<tr>");
     row.append($("<td>").text(chosenfood.name + " in " + chosenfood.location.city + ", " + chosenfood.location.state));
-    $("#history").append(row);
+    // $("#history").append(row);
     initMap(); // creates the map
 });
 $("#decline").on("click", function(){ // clicking on decline goes back to the array and deletes the declined item and randomly chooses another item
