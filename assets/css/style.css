@@ -1,5 +1,8 @@
 body, html {
-    background: url(../img/dinner3.jpg) no-repeat center center; 
+    background: url(../img/dinner3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
@@ -9,8 +12,8 @@ body, html {
 }
 
 .jumbotron {
-    background: none;
-    margin: auto; 
+   
+    background: none; 
     text-align: center;
 }
 
@@ -60,6 +63,12 @@ p {
 
 #directions {
     background: white;
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        
+    }
 }
 
 
