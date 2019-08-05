@@ -119,20 +119,20 @@ $("#resetall").on("click", function () {
     $("#nameform").show();
     $("#name").val("");
     $("#location").val("");
-    $("#burgers").css("background-color", "white");
-    $("#chicken").css("background-color", "white");
-    $("#dessert").css("background-color", "white");
-    $("#japanese").css("background-color", "white");
-    $("#korean").css("background-color", "white");
-    $("#mexican").css("background-color", "white");
-    $("#pizza").css("background-color", "white");
-    $("#sandwiches").css("background-color", "white");
-    $("#thai").css("background-color", "white");
-    $("#vegeterian").css("background-color", "white");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    // $("#burgers").css("background-color", "white");
+    // $("#chicken").css("background-color", "white");
+    // $("#dessert").css("background-color", "white");
+    // $("#japanese").css("background-color", "white");
+    // $("#korean").css("background-color", "white");
+    // $("#mexican").css("background-color", "white");
+    // $("#pizza").css("background-color", "white");
+    // $("#sandwiches").css("background-color", "white");
+    // $("#thai").css("background-color", "white");
+    // $("#vegeterian").css("background-color", "white");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     $("#rest").attr("src", "");
     $("#namecomp").text("");
     $("#directions").text("");
@@ -420,34 +420,34 @@ $("#vegeterian").on("click", function () {
 })
 var choice = 0; // the default for choice is 0
 $("#d1").on("click", function(){ // clicking on the first money value results in its button being set to the color red while the other money buttons are set to white
-    $(this).css("background-color", "red");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 1; // sets the choice value to 1 to indicate to the app that the user picked the first money option
     console.log(choice);
 });
 $("#d2").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d3").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 2;
     console.log(choice);
 });
 $("#d3").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d4").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d4").css("background-color", "white");
     choice = 3;
     console.log(choice);
 });
 $("#d4").on("click", function () {
-    $(this).css("background-color", "red");
-    $("#d1").css("background-color", "white");
-    $("#d2").css("background-color", "white");
-    $("#d3").css("background-color", "white");
+    $(this).css("background-color", "rgb(66, 202, 139)");
+    // $("#d1").css("background-color", "white");
+    // $("#d2").css("background-color", "white");
+    // $("#d3").css("background-color", "white");
     choice = 4;
     console.log(choice);
 });
@@ -488,6 +488,7 @@ $("#submit4").on("click", function () {
             chosenfood = foodarray[Math.floor(Math.random() * foodarray.length)];
             $("#rest").attr("src", chosenfood.image_url);
             $("#rest").attr("alt", "LOADING");
+            $("#namecomp").addClass("display-5");
             $("#namecomp").text("Your proposed restaurant is: " + chosenfood.name);
             console.log(queryURL);
         }
@@ -500,7 +501,7 @@ $("#agree").on("click", function () {
     $("#locator1").text("Your directions to " + chosenfood.name);
     var row = $("<tr>");
     row.append($("<td>").text(chosenfood.name + " in " + chosenfood.location.city + ", " + chosenfood.location.state));
-    $("#history").append(row);
+    // $("#history").append(row);
     initMap(); // creates the map
 });
 $("#decline").on("click", function(){ // clicking on decline goes back to the array and deletes the declined item and randomly chooses another item
