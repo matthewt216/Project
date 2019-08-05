@@ -148,10 +148,32 @@ $("#resetall").on("click", function () {
     vegeterian = false;
     foodarray = [];
 });
+
+$(".cbtn").on("click",function ()
+{
+var currentStatus = $(this).attr("data-status");
+console.log(currentStatus)
+if (currentStatus == "unactive")
+{
+    $(this).css("background-color", "#ffd560");
+    $(this).attr("data-status", "active")	
+
+} else if (currentStatus == "active"){
+     
+     $(this).attr("data-status", "unactive")	
+
+    $(this).css("background-color", "#ffc107");
+}
+
+}
+);
+
 $("#burgers").on("click", function () {
-    if (burgers === false) {
-        $(this).css("background-color", "rgb(228, 235, 143)");
-        // $("#pizza").css("background-color", "white");
+    if (burgers === false )
+    {
+
+       // $(this).css("background-color", "black");
+        // $("#pizza").css("background-color", "rgb(228, 235, 143)");
         // $("#rice").css("background-color", "white");
         // $("#med").css("background-color", "white");
         // $("#chicken").css("background-color", "white");
@@ -173,8 +195,11 @@ $("#burgers").on("click", function () {
     else{
         // $(this).css("background-color", "white"); // the button is unclicked and is white when bar is true
         burgers = false; // sets the bar variable back to false
+
     }
 })
+
+
 $("#chicken").on("click", function () {
     if (chicken === false) {
         $(this).css("background-color", "rgb(228, 235, 143)");
@@ -418,9 +443,31 @@ $("#vegeterian").on("click", function () {
         thai = false;
     }
 })
+
+
+$(".ccbtn").on("click",function ()
+{
+var currentStatus = $(this).attr("data-status");
+console.log(currentStatus)
+if (currentStatus == "unactive")
+{
+    $(this).css("background-color", "#86e29b");
+    $(this).attr("data-status", "active")	
+
+} else if (currentStatus == "active"){
+     
+     $(this).attr("data-status", "unactive")	
+    $(this).css("background-color", "#28a745");
+    choice = 0;
+}
+}
+);
+
+
+
 var choice = 0; // the default for choice is 0
 $("#d1").on("click", function(){ // clicking on the first money value results in its button being set to the color red while the other money buttons are set to white
-    $(this).css("background-color", "rgb(66, 202, 139)");
+   // $(this).css("background-color", "rgb(66, 202, 139)");
     // $("#d2").css("background-color", "white");
     // $("#d3").css("background-color", "white");
     // $("#d4").css("background-color", "white");
