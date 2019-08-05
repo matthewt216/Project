@@ -6,219 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmWbaHcOlSWO45S3jQmJ3t1Hcz8hsVDE"></script>
-    <script type='text/javascript' src='./config.js'></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <title>What to Eat?!</title>
+    <link rel="stylesheet" href="assets/css/w3.css">
+    <link rel="stylesheet" href="assets/css/wickedcss.min.css">
+    <title>WHAT TO EAT</title>
 
 </head>
 
 <body>
-
-    <div class="container">
-
-        <div class="page1">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron" id="nameform">
-                        <h1 class="display-4">What to Eat?!!</h1>
-                        <p class="lead">Tired of wasting time deciding where to eat?</p>
-                        <p class="lead">We got you!</p>
-                        <p class="my-4">What is your name? (optional)</p>
-                        <input type="text" id="name" required />
-
-                        <br>
-                        <br>
-
-                        <a class="btn btn-primary btn-lg" href="" id="submit1" type="submit" role="button">Submit</a>
-
-                        <!-- <div class="row">
-                                <div class="col-sm-12">
-                                    <table id="history">
-                                        <th id="pastsearches">Previous Searches:</th>
-                                    </table>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page2">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="locationform">
-                        <h1 id="hello"></h1>
-                        <h1 class="lead">Your location is:</h1>
-                        <br>
-                        <p id="location"></p>
-                        <br>
-                        <a class="btn btn-info btn-lg" href="" id="submit2" type="submit" role="button">Accept</a>
-                        <a class="btn btn-danger btn-lg" href="" id="back1" type="submit" value="Back"
-                            role="button">Back</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page3">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="listrow1">
-                        <h1 class="display-5">What are you in the mood for?</h1>
-
-                        <br>
-
-                        <div class="row">
-                            <div class="col-sm-12 categorybuttons">
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="burgers" data-status="unactive">Burgers</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="chicken" data-status="unactive">Chicken</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="dessert" data-status="unactive">Dessert</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="japanese" data-status="unactive">Japanese</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="korean" data-status="unactive">Korean</button>
-                                <br>
-                                <br>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="mexican" data-status="unactive">Mexican</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="pizza" data-status="unactive">Pizza</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="sandwiches" data-status="unactive">Sandwiches</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="thai" data-status="unactive">Thai</button>
-                                <button type="button" class="cbtn btn btn-outline-warning btn-lg active"
-                                    id="vegeterian" data-status="unactive">Vegeterian</button>
-
-                                <br>
-                                <br>
-                                <br>
-
-                                <input class="btn btn-info btn-lg" href="" type="submit" id="submit3">
-                                <input class="btn btn-danger btn-lg" href="" type="button" id="back2" value="Back">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page4">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="prices">
-                        <h1 class="display-5">Please select a price range</h1>
-
-                        <br>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-
-                                <button type="button" class="ccbtn btn btn-outline-success btn-lg active"
-                                    id="d1" data-status="unactive">Inexpensive</button>
-                                <button type="button" class="ccbtn btn btn-outline-success btn-lg active"
-                                    id="d2" data-status="unactive">Mid-Range</button>
-                                <button type="button" class="ccbtn btn btn-outline-success btn-lg active"
-                                    id="d3" data-status="unactive">Upsacle</button>
-                                <button type="button" class="ccbtn btn btn-outline-success btn-lg active" id="d4">Baller
-                                    Status!</button>
-
-                                <br>
-                                <br>
-                                <br>
-
-                                <input class="btn btn-info btn-lg" type="submit" id="submit4">
-                                <input class="btn btn-danger btn-lg" type="button" id="back3" value="Back">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page5">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="choice">
-                        <div id="choice">
-                            <img id="rest" width="400px" height="300px">
-                            <h2 id="namecomp"></h2>
-
-                            <br>
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <button class="btn btn-info btn-lg" id="agree">Accept</button>
-                                    <button class="btn btn-danger btn-lg" id="decline">Decline</button>
-
-                                    <br>
-                                    <br>
-
-                                    <input class="btn btn-secondary btn-lg" type="button" id="back4" value="Back">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="page5">
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="jumbotron w3-container w3-center w3-animate-opacity" id="result">
-                        <div>
-                            <h1 class="display-5" id="locator1"></h1>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div id="map"></div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div id="directions"></div>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <input class="btn btn-secondary btn-lg" type="button" id="resetall" value="Start Over">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <table id="history" class="w3-animate-zoom">
+            <th>Previous Searches</th>
+    </table>
+    <button id="delete" class="w3-animate-zoom" class="food">Clear History</button>
+    <form id="nameform" class="w3-animate-zoom">
+        <h1 id="welcome" class="animate-flicker">WHAT TO EAT</h1>
+        <br>
+        <h2>(Optional) What is your name?</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="name" required/>
+        <br>
+        <br>
+        <input type="submit" id="submit1">
+        <input type="reset" id="reset1">
+    </form>
+    <form id="locationform" class="bounceIn">
+        <h1 id="hello"></h1>
+        <h2>What is your address/location?</h2>
+        <br>
+        <p id="location"></p>
+        <br>
+        <br>
+        <input type="submit" id="submit2">
+        <input type="button" id="back1" value="Back">
+    </form>
+    <div id="listrow1" class="w3-container w3-center w3-animate-opacity">
+        <h1>Great! Choose your food categories.</h1>
+        <button id="bar" class="food">Bar Food</button>
+        <button id="pizza" class="food">Pizza</button>
+        <button id="rice" class="food">Rice-bowls</button>
+        <button id="med" class="food">Mediterranean</button>
+        <button id="chicken" class="food">Chicken</button>
+        <button id="desserts" class="food">Desserts</button>
+        <button id="salads" class="food">Salads</button>
+        <button id="seafood" class="food">Seafood</button>
+        <br>
+        <br>
+        <h1>NOTHING YOU LIKE ABOVE? TYPE IN YOUR CHOICE IN THE FIELD BELOW</h1>
+        <input type="text" id="typedchoice" required>
+        <br>
+        <input type="submit" id="submit3">
+        <input type="button" id="back2" value="Back">
     </div>
-
-    <script type="text/javascript" src="./assets/js/app.js"></script>
-
+    <div id="prices" class="w3-container w3-center w3-animate-opacity">
+        <h1>Select a price(s)</h1>
+        <br>
+        <button id="d1" class="food"><= $10</button>
+        <button id="d2" class="food">$11-$30</button>
+        <button id="d3" class="food">$31-$60</button>
+        <button id="d4" class="food">>=$61</button>
+        <br>
+        <br>
+        <input type="submit" id="submit4">
+        <input type="button" id="back3" value="Back">
+    </div>
+    <div id="choice">
+        <img id="rest" width="200px" height="200px">
+        <h2 id="namecomp"></h2>
+        <h2 id="rating"></h2>
+        <br>
+        <button id="agree">Accept</button>
+        <button id="decline">Decline</button>
+        <br>
+        <br>
+        <input type="button" id="back4" value="Back">
+    </div>
+    <div id="result">
+        <h1 id="locator1"></h1>
+        <br>
+        <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+                <option value="DRIVING">Driving</option>
+            </select>
+        </div>
+        <div id="map"></div>
+        <div id="directions"></div>
+        <center><input type="button" id="resetall" value="Start Over"></center>
+    </div>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src='config.js'></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr5uxsua85nBkn2LEKTw0C40g5k5jTIcc&callback=initMap"></script>
 </html>
