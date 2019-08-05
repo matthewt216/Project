@@ -5,40 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmWbaHcOlSWO45S3jQmJ3t1Hcz8hsVDE"></script>
-    <script type='text/javascript' src='./config.js'></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
-
-
-
-
-    <title>Project</title>
+    <link rel="stylesheet" href="assets/css/w3.css">
+    <link rel="stylesheet" href="assets/css/wickedcss.min.css">
+    <title>WHAT TO EAT</title>
 
 </head>
 
 <body>
-    <table id="history">
+    <table id="history" class="w3-animate-zoom">
             <th>Previous Searches</th>
     </table>
-    <form id="nameform" class="w3-container w3-center w3-animate-opacity">
-        <h1>Welcome to the FoodRestaurant App</h1>
-        <h1>(Optional) What is your name?</h1>
+    <button id="delete" class="w3-animate-zoom" class="food">Clear History</button>
+    <form id="nameform" class="w3-animate-zoom">
+        <h1 id="welcome" class="animate-flicker">WHAT TO EAT</h1>
+        <br>
+        <h2>(Optional) What is your name?</h2>
+        <br>
+        <br>
+        <br>
+        <br>
         <input type="text" id="name" required/>
         <br>
         <br>
         <input type="submit" id="submit1">
         <input type="reset" id="reset1">
     </form>
-    <form id="locationform" class="w3-container w3-center w3-animate-opacity">
+    <form id="locationform" class="bounceIn">
         <h1 id="hello"></h1>
-        <h1>What is your address?</h1>
+        <h2>What is your address/location?</h2>
+        <br>
         <input type="text" id="location" required>
         <br>
         <br>
@@ -47,26 +45,29 @@
     </form>
     <div id="listrow1" class="w3-container w3-center w3-animate-opacity">
         <h1>Great! Choose your food categories.</h1>
-        <button id="bar">Bar Food</button>
-        <button id="pizza">Pizza</button>
-        <button id="rice">Rice-bowls</button>
-        <button id="med">Mediterranean</button>
-        <button id="chicken">Chicken</button>
-        <button id="desserts">Desserts</button>
-        <button id="salads">Salads</button>
-        <button id="seafood">Seafood</button>
+        <button id="bar" class="food">Bar Food</button>
+        <button id="pizza" class="food">Pizza</button>
+        <button id="rice" class="food">Rice-bowls</button>
+        <button id="med" class="food">Mediterranean</button>
+        <button id="chicken" class="food">Chicken</button>
+        <button id="desserts" class="food">Desserts</button>
+        <button id="salads" class="food">Salads</button>
+        <button id="seafood" class="food">Seafood</button>
         <br>
+        <br>
+        <h1>NOTHING YOU LIKE ABOVE? TYPE IN YOUR CHOICE IN THE FIELD BELOW</h1>
+        <input type="text" id="typedchoice" required>
         <br>
         <input type="submit" id="submit3">
         <input type="button" id="back2" value="Back">
     </div>
     <div id="prices" class="w3-container w3-center w3-animate-opacity">
-        <h1>Select a price ($ = under $10, $$ = $11-$30, $$$ = $31-$60, $$$$ = over $61)</h1>
+        <h1>Select a price(s)</h1>
         <br>
-        <button id="d1">$</button>
-        <button id="d2">$$</button>
-        <button id="d3">$$$</button>
-        <button id="d4">$$$$</button>
+        <button id="d1" class="food"><= $10</button>
+        <button id="d2" class="food">$11-$30</button>
+        <button id="d3" class="food">$31-$60</button>
+        <button id="d4" class="food">>=$61</button>
         <br>
         <br>
         <input type="submit" id="submit4">
@@ -91,16 +92,15 @@
             <select id="mode">
                 <option value="DRIVING">Driving</option>
             </select>
-            </div>
+        </div>
         <div id="map"></div>
-        <br>
         <div id="directions"></div>
         <center><input type="button" id="resetall" value="Start Over"></center>
     </div>
-
-    <script type="text/javascript" src="./assets/js/app.js"></script>
-
 </body>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src='config.js'></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr5uxsua85nBkn2LEKTw0C40g5k5jTIcc&callback=initMap"></script>
 </html>
