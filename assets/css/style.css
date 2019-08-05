@@ -1,76 +1,169 @@
-body, html {
-    background: url(../img/dinner3.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    margin: 0;
-    height: 100%;
+body{
+    background-image: url("../img/dinner3.jpg");
 }
-
-.jumbotron {
-   
-    background: none; 
+#nameform, #locationform, #listrow1, #prices{
+    text-align: center;
+    margin: 0px 30px 30px 30px;
+    color: yellow;
+    
+}
+button{
+    background-color: white;
+}
+#choice{
+    text-align: center;
+    margin: 50px 30px 30px 30px;
+    color: yellow;
+}
+#submit1, #reset1, #submit2, #back1, #submit3, #back2, #submit4, #back3, #back4, #resetall, #agree, #decline{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: orange;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+#agree:hover, #decline:hover, #submit1:hover, #reset1:hover, #submit2:hover, #back1:hover, #submit3:hover, #back2:hover, #submit4:hover, #back3:hover, #back4:hover, #resetall:hover{
+    background-color: red;
+}
+#agree:active, #decline:active, #submit1:active,#reset1:active,#submit2:active,#back1:active,#submit3:active, #back2:active,#submit4:active, #back3:active, #back4:active, #resetall:active{
+    background-color: yellow;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.food{
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 15px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.food:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+.food:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+#delete{
+    position: relative;
+    background-color: red;
+    border: none;
+    font-size: 15px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px 10px 30px 20px;
+}
+#delete:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+#delete:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+#map{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin: 0px 0px 0px 350px;
+    color: yellow;
+    display: inline-block;
+}
+#result{
+    color: yellow;
+    margin: 0px 30px 30px 30px;
+}
+#locator1{
     text-align: center;
 }
-
-.display-4 {
-    color: white;
-    font-weight: bolder;
-    font-size: 80px;
+#back5{
+    text-align: center;
 }
-
-.display-5 {
-    color: white;
-    font-weight: bolder;
-    font-size: 50px;
-}
-
-.lead {
-    color: blanchedalmond;
-    font-size: 35px;
-    font-weight: bolder;
-}
-
-.my-4 {
-    color: rgb(228, 231, 186);
-    font-weight: bolder;
-    font-size: 25px;
-}
-
-#pastsearches {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-
-#back1, #back2, #back3, #decline {
-    margin-left: 20px;
-}
-
-.categorybuttons {
-    margin-top: 20px;  
-    margin-left: 20px;
-}
-
-p {
-    font-size: 2em;
-    font-weight: bolder;
-    color:white;
-}
-
-#directions {
+#directions{
     background: white;
+    display: inline-block;
+    width: 400px;
+    margin: 30px 30px 30px 30px;
 }
-
-@media only screen and (max-width: 640px) {
-    body {
-        
-    }
+#history{
+    color: yellow;
 }
-
-
-
-
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: red;
+  }
+input[type=text]:hover{
+    background-color: orange;
+}
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:.5; }
+    100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:.5; }
+    100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:.5; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:.5; }
+    100% { opacity:1; }
+}
+.animate-flicker {
+    -webkit-animation: flickerAnimation 1s infinite;
+    -moz-animation: flickerAnimation 1s infinite;
+    -o-animation: flickerAnimation 1s infinite;
+    animation: flickerAnimation 4s infinite;
+}
